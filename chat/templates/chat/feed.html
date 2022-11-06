@@ -1,0 +1,28 @@
+{% load static %}
+{% for room in chatrooms %}
+<div class="chat_room_host">
+    {% if room.host.profile.profile_pic %}
+        <div class="chat_room_host_img"><img src="{{room.host.profile.profile_pic.url}}" height="30"></div>
+    {% else %}
+        <div class="chat_room_host_img">
+            <img src="{% static '/images/avatar.png' %}" height="30">
+        </div>
+    {% endif %}
+    <div class="chat_room_host_name"><a href="{% url 'user_profile' room.host.id %}">@{{room.host}}</a></div> 
+</div>
+
+
+<div class="chat_room_name"> 
+    <a href="{% url 'room' room.id %}"><h4>{{room.name}}</h4></a>
+</div>
+<p>
+    Topic - {{room.topic}}
+</p>
+<div class="room_buttons">
+    <div class="room_button_align">
+        <div class="room_button"><a href="{% url 'update_room' room.id %}">Edit</a><a href="{% url 'delete_room' room.id %}">Delete</a></div>
+        
+    </div>
+    <hr>
+</div>
+{% endfor %}

@@ -1,0 +1,18 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<div class="login_wrapper">
+    <div class="login_bg">
+        <form method="POST" action="">
+            {% csrf_token %}
+
+            <p>Are you sure you wish to delete "{{obj}}"?</p>
+            <a href="{% url 'chat' %}">Go Back</a>
+            <input type="submit" value="Confirm">
+        </form>
+    </div>
+</div>
+
+
+{% endblock content %}

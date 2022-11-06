@@ -1,0 +1,43 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+
+<div class="room_grid">
+    <div class="room_title">
+        <h1>{{room.name}}</h1>
+        <h3>{{room.description}}</h3>
+    </div>
+    <div class="convo_body">
+        {% for mess in messages %}
+            <div class="message">
+                {% if mess.user.profile.profile_pic %}
+                <div class="mess_img"><img src="{{mess.user.profile.profile_pic.url}}" height="30"></div>
+                {% else %}
+                <div class="chat_room_host_img">
+                    <img src="{% static '/images/avatar.png' %}" height="30">
+                </div>
+                {% endif %}
+                <div class="mess_head"><h3>@{{mess.user}}</h3></div>
+                <div class="mess_date"> - {{mess.created|timesince}} ago</div>
+                <div class="mess_body"><p>{{mess.body}}</p></div>
+                <div class="mess_del">
+                    {% if request.user == mess.user %}
+                        <a href="{% url 'delete_message' mess.id %}">Delete</a>
+                    {% endif %}
+                </div>
+                
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if request.user.is_authenticated %}
+    <div class="comment_form">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input class="chat_entry_field" type="text" name="body" placeholder="Write Message here.">
+        </form>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock content %}

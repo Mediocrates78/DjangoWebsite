@@ -1,0 +1,447 @@
+html body {
+    height: 100%;
+    background-image: url('../images/main_bg.jpg');
+}
+
+p, li {
+    color: rgb(204, 196, 160);
+    font-family: Geneva, sans-serif;
+    font-weight: lighter;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+.navbar_main {
+    display: grid;
+    justify-items: center;
+}
+
+.navbar_buttons {
+    font-family: Geneva, sans-serif;
+    font-weight: lighter;
+    font-size: 25px;
+    padding-left: 20px;
+}
+
+.nav_button {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+a:link {
+    font-family: Geneva, sans-serif;
+    font-weight: lighter;
+    text-decoration: none;
+    color:bisque;
+}
+
+a:visited {
+    font-family: Geneva, sans-serif;
+    font-weight: lighter;
+    text-decoration: none;
+    color:bisque;
+}
+
+hr {
+    width: 100%;
+    border-color: rgb(66, 77, 70);
+}
+
+h1 {
+    font-family: Geneva, sans-serif;
+    font-weight: lighter;
+    color:bisque;
+}
+
+h2 {
+    font-family: Geneva, sans-serif;
+    font-weight: lighter;
+    color:bisque;
+}
+
+h3 {
+    font-family: Geneva, sans-serif;
+    font-weight: lighter;
+    color:bisque;
+}
+
+h4 {
+    font-family: Geneva, sans-serif;
+    font-weight: lighter;
+    color:bisque;
+}
+
+.main_grid {
+    margin-left: 20%;
+    margin-right: 20%;
+    display: grid;
+    grid-template-rows: 150px 120px;
+    grid-template-columns: 30%;
+}
+
+.main_grid_color {
+    grid-column: 1 /span 3;
+    grid-row: 3;
+    background-color: rgb(41, 46, 34, 0.3);
+
+}
+
+.dave_image {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+}
+
+.dave_name {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 30px;
+    color: beige;
+    justify-self: center;
+}
+
+.dave_info {
+    display: grid;
+    grid-column: 2;
+    grid-row: 3;
+    column-gap: 30px;
+    grid-template-columns: 50%;
+}
+
+.info_left {
+    grid-column: 1;
+    font-family: Geneva, sans-serif;
+    font-weight: lighter;
+    font-size: 15px;
+    color:bisque;
+    justify-self: end;
+
+
+}
+
+.info_right {
+    grid-column: 2;
+    font-family: Geneva, sans-serif;
+    font-weight: lighter;
+    font-size: 15px;
+    color:bisque;
+    justify-self: start;
+
+}
+
+.chat_container {
+    margin-left: 20%;
+    margin-right: 20%;
+    display: grid;
+    grid-template-columns: 20% 30% 5% 45%;
+}
+
+.chat_top {
+    margin-left: 20%;
+    margin-right: 20%;
+    grid-column: 1 / span 3;
+    display: grid;
+    grid-template-columns: auto auto 1fr auto auto;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 2px;
+    border-color: rgb(66, 77, 70);
+    border-style: solid;
+}
+
+.chat_search_name {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    margin-right: 20px;
+}
+
+.chat_search_entry {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+}
+
+.update_profile {
+    grid-column: 4;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+    font-size: 20px;
+}
+
+.log_in {
+    grid-column: 5;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.error_message {
+    text-align: center;
+}
+
+.chat_side {
+    grid-column: 1;
+}
+
+.chat_main {
+    grid-column: 2;
+    display: grid;
+    min-width: max-content;
+}
+
+.chat_activity_feed {
+    grid-column: 4;
+    width: 100%;
+}
+
+.chat_title {
+    margin-left: 20px;
+}
+
+.chat_create {
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.chat_no_rooms {
+    margin-left: 20px;
+
+}
+
+.chat_rooms {
+    min-width: max-content;
+}
+
+.chat_rooms_border {
+    border-color: rgb(66, 77, 70);
+    background-color: rgb(41, 46, 34, 0.3);
+    border-style: groove;
+    border-width: 5px;
+    grid-column: 1;
+    padding: 10px;
+}
+
+.chat_room_host {
+    display: grid;
+    grid-template-columns: max-content;
+}
+
+.chat_room_host_img {
+    grid-column: 1;
+    align-self: center;
+}
+
+.chat_room_host_name{
+    grid-column: 2;
+    align-self: center;
+}
+
+.chat_room_name {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    margin-top: -15px;
+    margin-bottom: -20px;
+}
+
+.room_grid {
+    margin-left: 20%;
+    margin-right: 20%;
+    display: grid;
+    grid-template-columns: 15px auto 15px;
+    justify-items: center;
+    border-color: rgb(66, 77, 70);
+    border-style: groove;
+    border-width: 5px;
+    
+}
+
+.room_title {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    border-color: rgb(66, 77, 70);
+    background-color: rgb(41, 46, 34, 0.3);
+    border-style: groove;
+    border-width: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.convo_body {
+    width: 100%;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.message {
+    border-color: rgb(66, 77, 70);
+    border-style: solid;
+    border-width: 5px;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    display: grid;
+    grid-template-columns: min-content;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    justify-content: start;
+}
+
+.mess_img {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    width: 40px
+}
+
+.mess_head {
+    grid-column: 2;
+    grid-row: 1;
+    width: fit-content
+}
+
+.mess_date {
+    grid-column: 3;
+    grid-row: 1;
+    margin-left: 10px;
+    font-family: Geneva, sans-serif;
+    font-weight: lighter;
+    color:rgb(158, 146, 121);
+    align-self: center;
+    width: max-content;
+}
+
+.mess_body {
+    grid-column: 1 / span 4;
+    grid-row: 2;
+    margin-top: -20px;
+}
+
+.mess_del {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.comment_form {
+    grid-column: 2;
+    grid-row: 3;
+    width: 100%;
+}
+
+.chat_entry_field {
+    font-size: 18px;
+    color: bisque;
+    background-color: rgb(0, 0, 0, 0);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(66, 77, 70);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+
+.form_main {
+    margin-left: 20%;
+    margin-right: 20%;
+    justify-content: center;
+}
+
+.room_buttons {
+    display: grid;
+}
+
+.room_button a:link{
+    font-size: 15px;
+    color:rgb(158, 146, 121);
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.room_button a:visited{
+    font-size: 15px;
+    color:rgb(158, 146, 121);
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.login_wrapper {
+    display: grid;
+    max-width: 100%;
+    margin-top: 50px;
+    justify-content: center;
+    text-align: center;
+}
+
+.login_bg {
+    background-color: rgb(41, 46, 34, 0.3);
+    border-width: 2px;
+    border-style: groove;
+    border-color: bisque;
+    padding-bottom: 20px;
+    display: grid;
+    text-align: center;
+    width: 500px;
+}
+
+.entry_field {
+    font-size: 18px;
+    color: bisque;
+    background-color: rgb(0, 0, 0, 0);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(66, 77, 70);
+}
+
+.profile_wrapper {
+    margin-left: 20%;
+    margin-right: 20%;
+    display: grid;
+    grid-template-columns: 20% 30% 5% 45%;
+}
+
+.profile_header {
+    margin-left: 35%;
+    margin-right: 35%;
+    display: grid;
+    justify-content: center;
+}
+
+.profile_pic {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    margin-right: 20px;
+}
+
+.profile_name {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 30px;
+}
+
+.profile.bio{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.profile_topics {
+    grid-column: 1;
+}
+
+.profile_feed {
+    grid-column: 2;
+}
+
+.profile_activity {
+    grid-column: 4;
+}

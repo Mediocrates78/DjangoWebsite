@@ -1,0 +1,37 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+
+<div class="login_wrapper">
+    <div class="login_bg">
+        <form method="POST" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>
+                <h2>Update Profile</h2>
+            </div>
+
+            <div><h3>{{form.username.label}}</h3></div>
+            <div>
+                {{form.username}}
+            </div>
+            <div><h3>{{profileform.profile_pic.label}}</h3></div>
+            <div>
+                <h4>{{profileform.profile_pic}}</h4>
+            </div>
+            <div><h3>{{profileform.bio.label}}</h3></div>
+            <div>
+                {{profileform.bio}}
+            </div>
+            <div><h3>{{form.email.label}}</h3></div>
+            <div>
+                {{form.email}}
+            </div>
+
+            <br><br>
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</div>
+
+
+{% endblock content %}

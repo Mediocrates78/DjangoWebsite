@@ -1,0 +1,61 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+{% if page == 'login' %}
+
+<div class="login_wrapper">
+    <div class="login_bg">
+        <form method="POST" action="">
+            {% csrf_token %}
+
+            <div class="login_title"><h2>Log In</h2></div>
+            <div><h3>Username</h3></div>
+            <input class="entry_field" type="text" name="username" placeholder="Enter username">
+            <br>
+            <div><h3>Password</h3></div>
+            <input class="entry_field"type="password" name="password" placeholder="Enter password">
+            <br><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    
+    
+    {% for message in messages %}
+        <div class="error_message"><h3>{{message}}</h3></div>
+    {% endfor %}
+
+    <p>Haven't signed up yet?</p>
+    <div><a href="{% url 'register' %}"><h4>Sign up</h4></a></div>
+    
+</div>
+
+{% else %}
+<div class="login_wrapper">
+    <div class="login_bg">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="login_title"><h2>Register</h2></div>
+            <div><h3>Username</h3></div>
+            {{form.username}}
+            <div><h3>Password</h3></div>
+            {{form.password1}}
+            <div><h3>Re-enter Password</h3></div>
+            {{form.password2}}
+            <div><h3>About Me</h3></div>
+            {{profileform.bio}}
+
+            <br><br>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+    
+    <p>Already signed up?</p>
+    <a href="{% url 'login' %}"><h4>Login</h4></a>
+
+</div>
+
+{% endif %}
+
+
+{% endblock content %}

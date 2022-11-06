@@ -1,0 +1,36 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="profile_header">
+        <div class="profile_pic">
+        {% if user.profile.profile_pic %}
+            <div class="chat_room_host_img"><img src="{{user.profile.profile_pic.url}}" height="150"></div>
+        {% else %}
+            <div class="chat_room_host_img">
+                <img src="{% static '/images/avatar.png' %}" height="150">
+            </div>
+        {% endif %}
+        </div>
+        <div class="profile_name"><h1>{{user.username}}</h1></div>
+        <div class="profile_bio"><h4>{{user.profile.bio}}</h4></div>
+        
+    </div>
+<div class="profile_wrapper">
+    
+    <div class="profile_topics">
+        {% include 'chat/topics.html' %}
+    </div>
+    <div class="profile_feed">
+        <h2>Chat Rooms</h2>
+        <div class="chat_rooms_border">
+            {% include 'chat/feed.html' %}
+        </div>
+    </div>
+    <div class="profile_activity">
+        {% include 'chat/activity.html' %}
+    </div>
+</div>
+
+{% endblock content %}

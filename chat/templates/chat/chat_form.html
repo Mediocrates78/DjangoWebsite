@@ -1,0 +1,33 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<div class="login_wrapper">
+    <div class="login_bg">
+        <form method="POST", action="">
+            {% csrf_token %}
+            <div><h2>Create / Update Room</h2></div>
+            <label for="room_topic"><h3>Topic</h3></label>
+            <div><input required type="text", value="{{room.topic.name}}", name="topic", list="topic-list"></div>
+            
+            <datalist id="topic-list">
+                <select id="room_topic">
+                    {% for topic in topics %}
+                    <option value="{{topic.name}}">{{topic.name}}</option>
+                    {% endfor %}
+                </select>
+            </datalist>
+            
+            <div><label for="room_name"><h3>Room name</h3></label></div>
+            <div>{{form.name}}</div>
+
+            <div><label for="description"><h3>Description</h3></label></div>
+            <div>{{form.description}}</div>
+
+            <input type="submit" value="Submit">
+        </form>
+
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% load static %}
+<h2>Recent Activity</h2>
+    {% for mess in chat_messages|slice:":10" %}
+        <div>
+            <div class="message">
+                {% if mess.user.profile.profile_pic %}
+                <div class="mess_img"><img src="{{mess.user.profile.profile_pic.url}}" height="30"></div>
+                {% else %}
+                <div class="chat_room_host_img">
+                    <img src="{% static '/images/avatar.png' %}" height="30">
+                </div>
+                {% endif %}
+                <div class="mess_head"><a href="{% url 'user_profile' mess.user.id %}"><h3>@{{mess.user}}</h3></a></div>
+                <div class="mess_date"> - {{mess.created|timesince}} ago in '{{mess.room}}'</div>
+                <div class="mess_body"><p>{{mess.body}}</p></div>
+                <div class="mess_del">
+                    {% if request.user == mess.user %}
+                        <a href="{% url 'delete_message' mess.id %}">Delete</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
